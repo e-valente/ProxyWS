@@ -22,6 +22,7 @@ public class ProxyWS {
     private List<InetAddress> IPList;
     private List<Integer> PortList;
     
+    
     ProxyWS()
     {
         IPList = new ArrayList<>();
@@ -33,11 +34,13 @@ public class ProxyWS {
     /**
      * @param args the command line arguments
      */
+    /*
     public static void main(String[] args) {
         // TODO code application logic here
         
         
     }
+    * */
     
     public void openFile() 
     {
@@ -77,5 +80,18 @@ public class ProxyWS {
         } 
         
             }
+    
+    public String response()
+    {
+        String response;
+        
+        response =  IPList.get(0) + " : " + Integer.toString(PortList.get(0));
+        
+        System.out.println("returning: " + response);
+        
+        
+        return response;
+        
+    }
         
 }

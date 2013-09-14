@@ -14,6 +14,9 @@ public class TestClass {
         ProxyWS myproxies = new ProxyWS();
         myproxies.openFile();
         
+        myproxies.response();
+        
+        
         
     }
 }
