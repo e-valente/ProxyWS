@@ -11,10 +11,9 @@ package proxyws;
 public class TestClass {
     public static void main(String[] args)
     {
-        ProxyWS myproxies = new ProxyWS();
-        myproxies.openFile();
-        
-        myproxies.response();
+        ProxyWS myproxies = new ProxyWS();  
+       myproxies.getIPAddress();
+       myproxies.getPort();
         
         
         

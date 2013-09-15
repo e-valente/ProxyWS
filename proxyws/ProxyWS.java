@@ -27,6 +27,7 @@ public class ProxyWS {
     {
         IPList = new ArrayList<>();
         PortList = new ArrayList<>();
+        openFile();
         
     }
     
@@ -42,7 +43,7 @@ public class ProxyWS {
     }
     * */
     
-    public void openFile() 
+    private void openFile() 
     {
         Scanner input;
         
@@ -50,7 +51,7 @@ public class ProxyWS {
         {
             input = new Scanner(new File("proxies.txt"));
             
-            System.out.println("foi");
+            //System.out.println("foi");
             
             while(input.hasNext())
             {
@@ -81,13 +82,29 @@ public class ProxyWS {
         
             }
     
-    public String response()
+    public String getIPAddress()
     {
         String response;
+        InetAddress myip;
         
-        response =  IPList.get(0) + " : " + Integer.toString(PortList.get(0));
+        myip = IPList.get(0);
         
-        System.out.println("returning: " + response);
+        response =  myip.toString();
+        
+        System.out.println("returning ip: " + response);
+        
+        
+        return response;
+        
+    }
+    
+     public Integer getPort()
+    {
+        Integer response;
+   
+        response = PortList.get(0);
+        
+        System.out.println("returning port: " + response);
         
         
         return response;
