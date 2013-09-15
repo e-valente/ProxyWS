@@ -112,3 +112,66 @@ public class ProxyWS {
     }
         
 }
+
+
+package org.apache.ws.axis2;
+
+import org.apache.ws.axis2.ProxyWSTestStub.GetPortResponse;
+import org.apache.ws.axis2.ProxyWSTestStub.GetIPAddressResponse;
+
+public class Main {
+
+	public static void main(String[] args) throws Exception{
+		// TODO Auto-generated method stub
+		
+		ProxyWSTestStub stub = new ProxyWSTestStub();
+		
+		//req port
+		ProxyWSTestStub.GetPort reqPort;
+		reqPort = new ProxyWSTestStub.GetPort();
+		
+		//req ip
+		ProxyWSTestStub.GetIPAddress reqIP;
+		reqIP = new ProxyWSTestStub.GetIPAddress();
+		
+		//invoke
+		GetPortResponse responsePort;
+		GetIPAddressResponse responseIP;
+		
+		responsePort = stub.getPort(reqPort);
+		responseIP = stub.getIPAddress(reqIP);
+		
+		
+		System.out.println("Porta... " + responsePort.get_return());
+		System.out.println("IP... " + responseIP.get_return());
+		
+
+	}
+
+}
+
+
+
+
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+		
+		ProxyWSTest pt;
+		pt = new ProxyWSTest();
+		
+		
+		 String current = new java.io.File( "." ).getCanonicalPath();
+	        System.out.println("Current dir:"+current);
+	        
+	        
+		System.out.println("Porta: " + pt.getPort());
+		System.out.println("IP: " + pt.getIPAddress());
+		
+		
+		
+
+	}
+
+}
