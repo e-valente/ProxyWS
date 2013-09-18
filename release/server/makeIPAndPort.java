@@ -4,6 +4,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 
@@ -11,6 +12,8 @@ public class makeIPAndPort {
 
 	private static List<InetAddress> IPList;
 	private static List<Integer> PortList;
+	private static int totalProxies;
+	private static int myIndex;
 
 	
 
@@ -21,6 +24,8 @@ public class makeIPAndPort {
 		
 		PortList = new ArrayList<Integer>();
 		IPList = new ArrayList<InetAddress>();
+		
+		totalProxies = 0;
 		
 
 		try
@@ -37,6 +42,7 @@ public class makeIPAndPort {
 				input.next();
 				//get the ports number
 				PortList.add(input.nextInt());
+				totalProxies++;
 
 
 			}
@@ -59,10 +65,15 @@ public class makeIPAndPort {
 	{
 		String response;
 		InetAddress myip;
-		//openFile();
+		Random randomNumber;
+		
+		randomNumber = new Random();
+		
+		myIndex = randomNumber.nextInt(totalProxies);
+		
 		
 
-		myip = IPList.get(0);
+		myip = IPList.get(myIndex);
 
 		
 		response = myip.toString();
@@ -78,7 +89,7 @@ public class makeIPAndPort {
 	{
 		String response;
 				
-		response = PortList.get(0).toString();
+		response = PortList.get(myIndex).toString();
 		
 		
 
